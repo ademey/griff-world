@@ -122,6 +122,16 @@ export const themeOverrides = {
           radius: 0,
         },
       },
+      medium: {
+        border: {
+          radius: 0,
+        },
+      },
+      large: {
+        border: {
+          radius: 0,
+        },
+      },
     },
     border: {
       radius: 0,

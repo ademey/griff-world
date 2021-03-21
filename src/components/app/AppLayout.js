@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Grommet, Box, Header, Main, Footer, Text, Button } from 'grommet';
 import { Grow } from 'grommet-icons';
 import { Helmet } from 'react-helmet';
+import Nav from './Nav';
 import CenterContent from '../layouts/CenterContent';
 import theme from '../../styles/theme';
 import '../../styles/global.css';
@@ -35,20 +36,14 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header background="brand" justify="center">
-        <CenterContent align="center">
-          <Box
-            direction="row"
-            pad={{ vertical: 'medium' }}
-            alignContent="start"
-            align="center"
-          >
-            <Button icon={<Grow />} />
-            <Text size="large">
-              {data.site.siteMetadata.title || 'Default Title'}
-            </Text>
-          </Box>
-        </CenterContent>
+      <Header background="brand" justify="between">
+        <Box direction="row" align="center">
+          <Button icon={<Grow />} />
+          <Text size="large">
+            {data.site.siteMetadata.title || 'Default Title'}
+          </Text>
+        </Box>
+        <Nav />
       </Header>
       <Box>
         <Main>{children}</Main>

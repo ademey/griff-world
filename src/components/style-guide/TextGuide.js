@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Markdown, Paragraph, Heading } from 'grommet';
+import { Box, Markdown, Paragraph, Heading, Text } from 'grommet';
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Primum divisit ineleganter; Duo Reges: constructio interrete. Quare conare, 
+Primum divisit ineleganter; Duo Reges: _constructio interrete_. Quare conare, 
 quaeso. Hoc uno captus Erillus scientiam summum bonum esse defendit nec rem
-ullam aliam per se expetendam. Quem si tenueris, non modo meum Ciceronem, sed 
+ullam aliam per se expetendam. **Quem si tenueris**, non modo meum Ciceronem, sed 
 etiam me ipsum abducas licebit. Hanc quoque iucunditatem, si vis, transfer in
 animum; Itaque sensibus rationem adiunxit et ratione effecta sensus non reliquit.
 Maximas vero virtutes iacere omnis necesse est voluptate dominante.`;
@@ -30,7 +30,9 @@ const TextGuide = () => (
       {['small', 'medium', 'large'].map((item) => (
         <React.Fragment key={item}>
           <Paragraph size={item}>
-            [font: {item}] {lorem}
+            Lorem ipsum dolor sit amet, <Text weight="bold">consectetur</Text>{' '}
+            adipiscing elit. Primum divisit ineleganter; Duo Reges:{' '}
+            <em>constructio</em> interrete.
           </Paragraph>
           <Paragraph size={item} fill>
             [font: {item}] {lorem}
@@ -39,6 +41,7 @@ const TextGuide = () => (
       ))}
     </Box>
     <Box>
+      <Markdown>{lorem}</Markdown>
       <Markdown>{md}</Markdown>
     </Box>
   </>
