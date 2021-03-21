@@ -6,6 +6,7 @@ const Colors = () => {
   const colorList = Object.entries(theme.global.colors).filter(
     (item) => typeof item[1] === 'string'
   );
+
   return (
     <Box>
       <Text>Colors Page</Text>

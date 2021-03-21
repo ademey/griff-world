@@ -8,11 +8,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Grommet, Box, Header, Main, Footer, Text, Button } from 'grommet';
-import { Grow } from 'grommet-icons';
+import {
+  Grommet,
+  Grid,
+  Box,
+  Header,
+  Main,
+  Footer,
+  Text,
+  Button,
+} from 'grommet';
+import { HelpOption } from 'grommet-icons';
 import { Helmet } from 'react-helmet';
 import Nav from './Nav';
-import CenterContent from '../layouts/CenterContent';
 import theme from '../../styles/theme';
 import '../../styles/global.css';
 
@@ -36,18 +44,40 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header background="brand" justify="between">
-        <Box direction="row" align="center">
-          <Button icon={<Grow />} />
-          <Text size="large">
-            {data.site.siteMetadata.title || 'Default Title'}
-          </Text>
-        </Box>
-        <Nav />
-      </Header>
-      <Box>
-        <Main>{children}</Main>
-        <Footer>Footer Content</Footer>
+      <Box
+        height="100vh"
+        flex={{ basis: '100vh' }}
+        style={{ height: '100vh', maxHeight: '100vh' }}
+      >
+        <Grid
+          rows={['50px', 'flex', '50px']}
+          columns={['full']}
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+          areas={[
+            { name: 'header', start: [0, 0], end: [0, 0] },
+            { name: 'body', start: [0, 1], end: [0, 1] },
+            { name: 'footer', start: [0, 2], end: [0, 2] },
+          ]}
+        >
+          <Header gridArea="header" background="brand" justify="between">
+            <Box direction="row" align="center" pad="small">
+              <Text>{data.site.siteMetadata.title || 'Default Title'}</Text>
+            </Box>
+            <Nav />
+          </Header>
+
+          <Main gridArea="body" overflow="scroll">
+            {children}
+          </Main>
+
+          <Footer gridArea="footer" background="brand" justify="between">
+            <Button
+              lablel="Help"
+              icon={<HelpOption />}
+              tip="Is this helpful?"
+            />
+          </Footer>
+        </Grid>
       </Box>
     </Grommet>
   );
