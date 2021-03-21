@@ -5,24 +5,15 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import {
-  Grommet,
-  Box,
-  Header,
-  Heading,
-  Main,
-  Footer,
-  Text,
-  Button,
-} from "grommet"
-import { Grow } from "grommet-icons"
-import { Helmet } from "react-helmet"
-import CenterContent from "../components/layouts/CenterContent"
-import theme from "../styles/theme"
-import "../styles/global.css"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Grommet, Box, Header, Main, Footer, Text, Button } from 'grommet';
+import { Grow } from 'grommet-icons';
+import { Helmet } from 'react-helmet';
+import CenterContent from '../layouts/CenterContent';
+import theme from '../../styles/theme';
+import '../../styles/global.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +24,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Grommet theme={theme}>
@@ -48,13 +39,13 @@ const Layout = ({ children }) => {
         <CenterContent align="center">
           <Box
             direction="row"
-            pad={{ vertical: "medium" }}
+            pad={{ vertical: 'medium' }}
             alignContent="start"
             align="center"
           >
             <Button icon={<Grow />} />
             <Text size="large">
-              {data.site.siteMetadata.title || "Default Title"}
+              {data.site.siteMetadata.title || 'Default Title'}
             </Text>
           </Box>
         </CenterContent>
@@ -64,11 +55,11 @@ const Layout = ({ children }) => {
         <Footer>Footer Content</Footer>
       </Box>
     </Grommet>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

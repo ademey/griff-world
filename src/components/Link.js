@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Anchor } from "grommet"
-import { navigate } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Anchor } from 'grommet';
+import { navigate } from 'gatsby';
 
 /**
  * Wrapper for Gatsby link using Grommet Anchor component
@@ -12,16 +12,16 @@ import { navigate } from "gatsby"
 const Link = ({ to, ...rest }) => (
   <Anchor
     href={to}
-    onClick={ev => {
-      navigate(to)
-      ev.preventDefault()
+    onClick={(ev) => {
+      navigate(to);
+      ev.preventDefault();
     }}
     {...rest}
   />
-)
+);
 
 Link.propTypes = {
   to: PropTypes.string,
-}
+};
 
-export default Link
+export default Link;

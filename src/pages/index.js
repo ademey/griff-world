@@ -1,14 +1,11 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { Box, Heading, Paragraph } from "grommet"
-
-import Layout from "../components/Layout"
-import CenterContent from "../components/layouts/CenterContent"
-import SEO from "../components/SEO"
+import * as React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import { Heading, Paragraph } from 'grommet';
+import { AppLayout, SEO } from '../components/app';
+import CenterContent from '../components/layouts/CenterContent';
 
 const IndexPage = () => (
-  <Layout>
+  <AppLayout>
     <CenterContent>
       <SEO title="Home" />
       <Heading>Hi people</Heading>
@@ -18,12 +15,12 @@ const IndexPage = () => (
         src="../images/gatsby-astronaut.png"
         width={300}
         quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
+        formats={['AUTO', 'WEBP', 'AVIF']}
         alt="A Gatsby astronaut"
         style={{ marginBottom: `1.45rem` }}
       />
     </CenterContent>
-  </Layout>
-)
+  </AppLayout>
+);
 
-export default IndexPage
+export default IndexPage;
