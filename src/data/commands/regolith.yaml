@@ -1,0 +1,140 @@
+title: Regolith
+slug: '/commands/regolith'
+categories:
+  - Launch
+  - Modify
+  - Navigate
+  - Session
+  - Notifications
+  - Resize
+
+commands:
+  # Launch
+  - desc: Application
+    category: Launch
+    mods: ['w']
+    key: Space
+  - desc: Browser
+    category: Launch
+    mods: ['w', 's']
+    key: Enter
+  - desc: Command
+    category: Launch
+    mods: ['w', 's']
+    key: Space
+  - desc: File Browser
+    category: Launch
+    mods: ['w', 's']
+    key: N
+  - desc: File Search
+    category: Launch
+    mods: ['w', 'a']
+    key: Space
+  - desc: Notification
+    category: Launch
+    mods: ['w']
+    key: N
+  - desc: Shortcut Menue
+    category: Launch
+    mods: ['w', 's']
+    key: '?'
+  - desc: Bluetooth
+    category: Launch
+    mods: ['w']
+    key: Space
+
+  # Modify
+  - desc: Carry Window to Workspace
+    category: Modify
+    mods: ['w', 'a']
+    key: '0-9'
+  - desc: Containing Workspace
+    category: Modify
+    mods: ['w', 'c', 's']
+    key: Arrows
+  - desc: Move Window to Workspace
+    category: Modify
+    mods: ['w', 's']
+    key: '0-9'
+  - desc: Window Floating Toggle
+    category: Modify
+    mods: ['w', 's']
+    key: F
+  - desc: Toggle Fullscreen
+    category: Modify
+    mods: ['w']
+    key: F
+  - desc: Window Layout Mode
+    category: Modify
+    mods: ['w']
+    key: T
+
+  # Navigate
+  - desc: Next Workspace
+    category: Navigate
+    mods: ['w']
+    key: Tab
+  - desc: Previous Workspace
+    category: Navigate
+    mods: ['w', 'a']
+    key: Tab
+  - desc: Navigate Workspace
+    category: Navigate
+    mods: ['w', 'a']
+    key: Arrows
+  - desc: Relative Window
+    category: Navigate
+    mods: ['w']
+    key: Arrows
+  - desc: Workspaces
+    category: Navigate
+    mods: ['w']
+    key: '1-9'
+
+  # Session
+  - desc: Exit App
+    category: Session
+    mods: ['w', 's']
+    key: Q
+  - desc: Terminte App
+    category: Session
+    mods: ['w', 'a']
+    key: Q
+  - desc: Lock Screen
+    category: Session
+    mods: ['w']
+    key: Esc
+  - desc: Logout
+    category: Session
+    mods: ['w', 's']
+    key: E
+  - desc: Power Down
+    category: Session
+    mods: ['w', 's']
+    key: P
+  - desc: Reboot
+    category: Session
+    mods: ['w', 's']
+    key: B
+  - desc: Refresh Session
+    category: Session
+    mods: ['w', 's']
+    key: R
+  - desc: Reload i3 Config
+    category: Session
+    mods: ['w', 's']
+    key: C
+  - desc: Restart i3
+    category: Session
+    mods: ['w', 'c']
+    key: R
+  - desc: Sleep
+    category: Session
+    mods: ['w', 's']
+    key: S
+
+    # Resize
+  - desc: Enter Reize Mode
+    category: Resize
+    mods: ['w']
+    key: R
